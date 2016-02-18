@@ -1,16 +1,17 @@
 <DOCTYPE html>
 <html lang="en" ng-app = "ToDo">
   <head>
+    <title>todo</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="mystyle.css">
-    <script src="bower_components/angular/angular.min.js"</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="root.js"></script>
   </head>
 
   <body>
     <div ng-controller = "todoController">
-      <form name = "frm" ng-submit = "addTodo()"></form>
-        <input type = "text" name = "newtodo" ng-model = "newtodo" required>
+      <form name = "frm" ng-submit = "addTodo()">
+        <input type = "text" name = "newtodo" ng-model = "newTodo" required/>
         <button ng-disabled = "frm.$invalid">Go</button>
       </form>
       <button ng-click="clearCompleted()">Clear Completed</button>
