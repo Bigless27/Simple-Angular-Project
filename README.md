@@ -1,3 +1,3 @@
 # Simple-Angular-Project
 
--begginer project in angular
+-begginer projects in angular
