@@ -8,6 +8,10 @@ angular.module('ToDo',[])
       $scope.todos.push({'title':$scope.newTodo, 'done':false});
       $scope.newTodo = ''
     }
-    $scope.clearCompleted = function(){}
+    $scope.clearCompleted = function(){
+      $scope.todos = $scope.todos.filter(function(value){
+        return !value.done
+      })
+    }
 
   }])
