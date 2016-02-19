@@ -3,19 +3,15 @@
   <head>
     <title>Search</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <script src = "root.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src = "root.js"></script>
   </head>
 
   <body>
-    <div ng-controller = "SimpleController">
-      <input type = "text" ng-model = "name" /> {{name}}
-      <ul>
-        <li ng-repeat="cust in customers | filter: name">
-          {{cust.name}} - {{cust.city}}
-        </li>
-      </ul>
+    <div >
+      <div ng-view> </div>
     </div>
+
 
 
   </body>
