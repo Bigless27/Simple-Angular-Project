@@ -1,5 +1,5 @@
 
-var searchApp = angular.module('searchApp', []);
+var searchApp = angular.module('searchApp', ['ngRoute']);
 
 searchApp.config(function($routeProvider){
   $routeProvider

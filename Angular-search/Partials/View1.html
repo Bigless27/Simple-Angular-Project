@@ -1,8 +1,8 @@
 <div class = "container">
-  <h2> View </h2>
+  <h2> View 1 </h2>
   Name:
   <br />
-  <input type = "text" ng-model = "name" />
+  <input type = "text" data-ng-model = "name" />
   <br />
   <ul>
    <li ng-repeat="cust in customers | filter:name | orderBy: 'city'">
@@ -11,11 +11,11 @@
   </ul>
   <br />
   Customer Name:
-  <input type = "text" ng-mogel = "newCustomer.name"/>
+  <input type = "text" data-ng-model = "newCustomer.name"/>
   <br />
   Customer City:
-  <input type = "text" ng-model = "newCustomer.city" />
+  <input type = "text" data-ng-model = "newCustomer.city" />
   <br />
-  <button ng-click = "addCustomer()"> Add Customer </button>
+  <button data-ng-click = "addCustomer()"> Add Customer </button>
   <a href = "#/view2">View 2 </a>
 </div>
