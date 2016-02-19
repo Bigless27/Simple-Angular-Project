@@ -1,4 +1,5 @@
-var searchApp = angular.module('searchApp', {});
+
+var searchApp = angular.module('searchApp', []);
 
 searchApp.controller('SimpleController', function($scope){
   $scope.customers = [
@@ -7,4 +8,3 @@ searchApp.controller('SimpleController', function($scope){
   {name: 'Corey Lesson', city: "Bloomfield Hills"}
   ];
 });
-
