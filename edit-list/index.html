@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app = "list">
+    <head>
+        <title>Angular Edit</title>
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src='index.js'></script>
+
+         <script type="text/ng-template" id="display">
+            <td>{{data.color}}</td>
+            <td>{{data.number}}</td>
+            <td>
+                <button ng-click="editData(data)">Edit</button>
+            </td>
+        </script>
+        <script type="text/ng-template" id="edit">
+            <td><input type="text" ng-model="selected.color"></td>
+            <td><input type="text" ng-model="selected.number"></td>
+            <td>
+                <button ng-click="saveData($index)">Save</button>
+                <button ng-click="reset()">Cancel</button>
+            </td>
+         </script>
+    </head>
+    <body>
+        <div ng-controller = "MainController">
+        <h1>TABLE</h1>
+        <form name = "frm">
+            <input type = "text" placeholder = "color" name = "newcolor" ng-model = "newColor" required/>
+            <input type = "text" placeholder = "number" name = "newnumber" ng-model = "newNumber">
+            <button ng-click = "addData()" ng-disabled = "frm.$invalid">Add</button>
+        </form>
+        <div>
+            <input placeholder = "search" type = "text" ng-model = "query">
+        </div>
+            <div>
+                <table class= "table table-striped">
+                    <tr>
+                        <th>Color</th>
+                        <th>Number</th>
+                    </tr>
+                    <tr ng-repeat = "data in dataList | filter: query"  ng-include="getTemplate(data)">
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
